@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('hand-gesture-isolated.jpg'); /* Keep your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative; /* Added to ensure absolute positioning works correctly */
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+}
+
+
+/* Main gradient overlay */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+    z-index: 0; /* Ensure it is below the content */
+}
+
+/* Gradient overlay below game content */
+.game-content {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6); /* Increased opacity for better contrast */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 60%; /* Increased width */
+    max-width: 90%; /* Responsive width */
+    position: relative; /* Ensure content positioning within the game content */
+    z-index: 1; /* Ensure it is above the gradient */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Increased gap between buttons */
+}
+
+.choice-button {
+    padding: 15px 25px; /* Larger button padding */
+    font-size: 18px; /* Larger font size */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #007BFF;
+    color: white;
+}
+
+.choice-button:hover {
+    background: #0056b3;
+}
+
+.scoreboard {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  color: black;
+  font-weight: bolder;
+  text-transform: uppercase;
+
+}
+
+#computer-score {
+    text-align: left;
+}
+
+#human-score {
+    text-align: right;
+}
+
+#computer_choice,
+#human_choice,
+#result {
+    margin: 15px 0;
+}
